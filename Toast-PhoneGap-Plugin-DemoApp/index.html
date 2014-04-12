@@ -9,18 +9,15 @@
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
-    <script src="scripts/login.js"></script>
-    <script src="scripts/location.js"></script>
-    <script src="scripts/weather.js"></script>
+    <script src="scripts/demo.js"></script>
     <script src="scripts/app.js"></script>
 </head>
 <body>
     <!--Home View-->
     <div id="tabstrip-home"
         data-role="view"
-        data-title="Home">
+        data-title="Plugin info">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
@@ -28,93 +25,38 @@
             </div>
         </header>
 
-        <h3>Welcome!</h3>
-        <p>
-            Telerik AppBuilder&trade; enables you to build cross-platform device applications regardless of your
-            development platform by combining the convenience of a local development toolset with the
-            power and flexibility of the cloud.
-        </p>
-        <div class="welcome-image"></div>
-    </div>
-
-    <!--Login View-->
-    <div id="tabstrip-login"
-        data-role="view"
-        data-title="Login"
-        data-model="app.loginService.viewModel">
-
         <div class="logo-image"></div>
-        <div>
-            <h3 data-bind="visible: isLoggedIn">Welcome, <span data-bind="    text: username"></span>!</h3>
-            <input id="logout" type="submit" data-role="button" data-bind="click: onLogout, visible: isLoggedIn" value="Logout" class="login-button" />
-        </div>
-        <form data-bind="events: { keyup: checkEnter }">
-            <h3 data-bind="invisible: isLoggedIn">Enter your credentials:</h3>
-            <ul data-role="listview" data-style="inset" data-bind="invisible: isLoggedIn">
-                <li>
-                    <label>
-                        <div>Username</div>
-                        <input type="text" data-bind="value: username" />
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <div>Password</div>
-                        <input type="password" data-bind="value: password" />
-                    </label>
-                </li>
-            </ul>
-            <input id="login" type="submit" data-role="button" data-bind="click: onLogin, invisible: isLoggedIn" value="Login" class="login-button" />
-        </form>
+        <h3>Toast plugin demo</h3>
+        <p>
+            The Toast plugin allows you to show a message at the top, bottom, or center of your app.
+        </p>
+        <p>
+            The Toast is non-blocking and will disappear after a few seconds.
+        </p>
+        <p>
+            Custom plugins don't work in the simulator and the AppBuilder companion app,
+            so inside Telerik AppBuilder choose Run - Build - iOS/Android - App package.
+        </p>
     </div>
 
-    <!--Location View-->
-    <div id="tabstrip-location"
+    <!--Demo View-->
+    <div id="tabstrip-demo"
         data-role="view"
-        data-title="Location"
-        data-init="app.locationService.initLocation"
-        data-show="app.locationService.show"
-        data-hide="app.locationService.hide"
-        data-model="app.locationService.viewModel"
-        data-stretch="true">
+        data-title="Plugin demo"
+        data-model="app.demoService.viewModel">
 
-        <div id="map-canvas" class="map" data-bind="visible: isGoogleMapsInitialized"></div>
+        <div class="demo">
+            <h3>Toasts showing for a few seconds</h3>
+            <button data-role="button" data-bind="click: showToast_shortTop"   >Short Top</button>
+            <button data-role="button" data-bind="click: showToast_shortCenter">Short Center</button>
+            <button data-role="button" data-bind="click: showToast_shortBottom">Short Bottom</button>
 
-        <div id="no-map" data-bind="invisible: isGoogleMapsInitialized">
-            <h3>Location requires internet connection to display the map.</h3>
-        </div>
-        <div id="map-search-wrap" class="map-tools" data-bind="visible: isGoogleMapsInitialized">
-            <div>
-                <button id="map-navigate-home" class="map-tools-button home" data-bind="click: onNavigateHome"></button>
-                <input id="map-address" type="search" class="map-tools-input" data-bind="value: address" placeholder="Address" />
-                <button id="map-search" class="map-tools-button search" data-bind="click: onSearchAddress"></button>
-            </div>
+            <h3>Toasts showing a bit longer</h3>
+            <button data-role="button" data-bind="click: showToast_longTop"   >Long Top</button>
+            <button data-role="button" data-bind="click: showToast_longCenter">Long Center</button>
+            <button data-role="button" data-bind="click: showToast_longBottom">Long Bottom</button>
         </div>
     </div>
-
-    <!--Weather View-->
-    <div id="tabstrip-weather"
-        data-role="view"
-        data-title="Weather"
-        data-model="app.weatherService.viewModel">
-
-        <ul data-role="listview" data-style="inset"
-            data-bind="source: weatherDataSource"
-            data-template="weather-forecast-template">
-        </ul>
-    </div>
-
-    <!--Weather forecast template-->
-    <script id="weather-forecast-template" type="text/x-kendo-tmpl">
-        <div class="w-item-template">
-            <span class="w-icon ${image}"></span>
-            <h4 class="w-date">${day}</h4>
-            <div class="w-temp">
-                <span>${highTemperature}<sup>&deg;</sup></span>
-                <span>${lowTemperature}<sup>&deg;</sup></span>
-            </div>
-        </div>
-    </script>
 
     <!--Layout-->
     <div data-role="layout" data-id="tabstrip-layout">
@@ -128,10 +70,8 @@
         <!--Footer-->
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="#/" data-icon="home">Home</a>
-                <a href="#tabstrip-login" data-icon="contacts">Login</a>
-                <a href="#tabstrip-location" data-icon="search">Location</a>
-                <a href="#tabstrip-weather" data-icon="globe">Weather</a>
+                <a href="#/" data-icon="info">info</a>
+                <a href="#tabstrip-demo" data-icon="play">demo</a>
             </div>
         </div>
     </div>
