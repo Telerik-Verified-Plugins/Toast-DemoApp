@@ -1,11 +1,12 @@
 /* INFO VIEW STYLES */
 .logo-image {
     background-image: url(../styles/images/logo.png);
+    background-color: #fff;
     background-repeat: no-repeat;
     width: 319px;
     height: 60px;
     display: block;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 /* DEMO VIEW STYLES */
