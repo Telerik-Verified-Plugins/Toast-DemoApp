@@ -28,7 +28,7 @@
   }
 
   [self.webView makeToast:message duration:durationInt position:position];
-       
+    
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self writeJavascript:[pluginResult toSuccessCallbackString:command.callbackId]];
 }

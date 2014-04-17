@@ -13,7 +13,7 @@
 }
 
 /* DEMO VIEW STYLES */
-.demo button {
+.demo .button {
     margin: 0 auto;
     margin-bottom: 14px;
     display: block;

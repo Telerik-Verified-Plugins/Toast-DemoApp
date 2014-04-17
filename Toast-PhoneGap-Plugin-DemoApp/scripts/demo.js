@@ -44,7 +44,3 @@
         viewModel: new DemoViewModel()
     };
 })(window);
-
-window.onerror = function(a,b,c) {
-    alert(a);
-}
