@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>268983ce-fae3-45f2-8f24-90a7672f038d</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>nl.piggy.clientapp</AppIdentifier>
+    <AppIdentifier>nl.xservices.plugindemo.toast</AppIdentifier>
     <ProjectName>Toast-PhoneGap-Plugin-DemoApp</ProjectName>
     <IsRunnable>true</IsRunnable>
     <FrameworkVersion>3.2.0</FrameworkVersion>
@@ -16,6 +16,7 @@
     <BundleVersion>1.0</BundleVersion>
     <DisplayName>Toast plugin demo</DisplayName>
     <Description>Toast-PhoneGap-Plugin-DemoApp</Description>
+    <Author>Telerik</Author>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
