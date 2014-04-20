@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>268983ce-fae3-45f2-8f24-90a7672f038d</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>nl.xservices.plugindemo.toast</AppIdentifier>
+    <AppIdentifier>com.telerik.plugindemo.toast</AppIdentifier>
     <ProjectName>Toast-PhoneGap-Plugin-DemoApp</ProjectName>
     <IsRunnable>true</IsRunnable>
     <FrameworkVersion>3.2.0</FrameworkVersion>
