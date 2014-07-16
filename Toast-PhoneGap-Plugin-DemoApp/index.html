@@ -74,8 +74,19 @@
             <div data-role="tabstrip">
                 <a href="#/" data-icon="info">info</a>
                 <a href="#tabstrip-demo" data-icon="play">demo</a>
+                <a onclick="loadCDVTests()" data-icon="tests">tests</a>
             </div>
         </div>
     </div>
+    <script>
+        function loadCDVTests () {
+            localStorage.setItem('cdvtests-mode', 'auto');
+            navigator.notification.alert(
+                "This plugin defines Cordova tests which run in a fullscreen window.\n\nPress the back button to navigate back to the demo app.",
+                document.location = "cdvtests/index.html?showBack=1",
+                "Cordova Tests",
+                "Got it!");
+        };
+    </script>
 </body>
 </html>

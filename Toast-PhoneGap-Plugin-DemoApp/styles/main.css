@@ -20,6 +20,11 @@
     width: 80%;
 }
 
+.km-tests:after,
+.km-tests:before {
+    content: "\e0f8";
+}
+
 /* RETINA DISPLAY STYLES */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
     .logo-image {
