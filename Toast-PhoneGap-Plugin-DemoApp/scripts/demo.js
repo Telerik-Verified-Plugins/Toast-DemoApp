@@ -43,8 +43,8 @@
         },
 
         checkSimulator: function() {
-            if (window.plugins === undefined) {
-                alert('Plugin not available. Are you running in the simulator?');
+            if (window.navigator.simulator === true) {
+                alert('Plugins are not available in the simulator.');
                 return true;
             }
             return false;
