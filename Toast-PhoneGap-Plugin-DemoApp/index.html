@@ -20,7 +20,7 @@
         data-title="Plugin Info">
         <header data-role="header">
             <div data-role="navbar">
-                <span data-role="view-title"></span>
+                <span data-role="view-title" data-align="center"></span>
                 <a id="skin-change" data-role="button" data-align="left" data-click="app.changeSkin">Flat</a>
             </div>
         </header>
@@ -83,7 +83,8 @@
             localStorage.setItem('cdvtests-mode', 'auto');
             navigator.notification.alert(
                 "This plugin defines Cordova tests which run in a fullscreen window.\n\nPress the back button to navigate back to the demo app.",
-                document.location = "cdvtests/index.html?showBack=1",
+                // page doesn't load on WP if it contains a '?' or '&'
+                document.location = "cdvtests/index.html" + (device.platform == "Win32NT" ? "" : "?showBack=1"),
                 "Cordova Tests",
                 "Got it!");
         };
