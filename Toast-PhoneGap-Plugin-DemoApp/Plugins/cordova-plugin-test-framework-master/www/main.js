@@ -21,8 +21,6 @@
 
 'use strict';
 
-// TODO: re-add medic
-
 /******************************************************************************/
 
 function getMode(callback) {
@@ -95,9 +93,9 @@ function attachEvents() {
 
 /******************************************************************************/
 
-function wrapConsole() {
-  var origConsole = window.console;
+var origConsole = window.console;
 
+exports.wrapConsole = function() {
   function appendToOnscreenLog(type, args) {
     var el = document.getElementById('log--content');
     var div = document.createElement('div');
@@ -112,9 +110,11 @@ function wrapConsole() {
   }
 
   function createCustomLogger(type) {
+    var medic = require('org.apache.cordova.test-framework.medic');
     return function() {
       origConsole[type].apply(origConsole, arguments);
-      //window.medic.log.apply(window.medic.log, arguments);
+      // TODO: encode log type somehow for medic logs?
+      medic.log.apply(medic, arguments);
       appendToOnscreenLog(type, arguments);
       setLogVisibility(true);
     }
@@ -125,12 +125,17 @@ function wrapConsole() {
     warn: createCustomLogger('warn'),
     error: createCustomLogger('error'),
   }
-}
+};
+
+exports.unwrapConsole = function() {
+  window.console = origConsole;
+};
 
 /******************************************************************************/
 
-function createActionButton(title, callback) {
-  var buttons = document.getElementById('buttons');
+function createActionButton(title, callback, appendTo) {
+  appendTo = appendTo ? appendTo : 'buttons';
+  var buttons = document.getElementById(appendTo);
   var div = document.createElement('div');
   var button = document.createElement('a');
   button.textContent = title;
@@ -189,7 +194,7 @@ function runMain() {
   createActionButton('Auto Tests', setMode.bind(null, 'auto'));
   createActionButton('Manual Tests', setMode.bind(null, 'manual'));
   createActionButton('Reset App', location.reload.bind(location));
-  if (/showBack/.exec(location.search)) {
+  if (/showBack/.exec(location.hash)) {
       createActionButton('Back', function() {
           history.go(-1);
       });
@@ -199,20 +204,20 @@ function runMain() {
 /******************************************************************************/
 
 exports.init = function() {
-  /*
-  window.medic.load(function() {
-    if (window.medic.enabled) {
-      setMode('auto');
-    } else {
-    }
-  });
-  */
   // TODO: have a way to opt-out of console wrapping in case line numbers are important.
   // ...Or find a custom way to print line numbers using stack or something.
+  // make sure to always wrap when using medic.
   attachEvents();
-  wrapConsole();
+  exports.wrapConsole();
 
-  getMode(setMode);
+  var medic = require('org.apache.cordova.test-framework.medic');
+  medic.load(function() {
+    if (medic.enabled) {
+      setMode('auto');
+    } else {
+      getMode(setMode);
+    }
+  });
 };
 
 /******************************************************************************/

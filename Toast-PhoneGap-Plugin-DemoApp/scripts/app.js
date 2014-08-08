@@ -27,10 +27,9 @@
                     .success(function(result) {
                         navigator.notification.alert(
                             "This plugin defines Cordova tests which run in a fullscreen window.\n\nPress the back button to navigate back to the demo app.",
-                            // page doesn't load on WP if it contains a '?' or '&'
                             function () {
 		                        localStorage.setItem('cdvtests-mode', 'auto');
-                                document.location = "cdvtests/index.html" + (device.platform == "Win32NT" ? "" : "?showBack=1")
+                                document.location = "cdvtests/index.html#showBack=1";
                             },
                             "Cordova Tests",
                             "Got it!");
