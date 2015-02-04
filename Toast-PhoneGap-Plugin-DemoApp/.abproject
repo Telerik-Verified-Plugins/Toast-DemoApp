@@ -4,7 +4,7 @@
   "AppIdentifier": "com.telerik.plugindemo.toast",
   "ProjectName": "Toast-PhoneGap-Plugin-DemoApp",
   "IsRunnable": "true",
-  "FrameworkVersion": "3.5.0",
+  "FrameworkVersion": "3.7.0",
   "AndroidPermissions": [
     "android.permission.CAMERA",
     "android.permission.VIBRATE",
@@ -61,5 +61,8 @@
   "DisplayName": "Toast plugin demo",
   "Description": "Toast-PhoneGap-Plugin-DemoApp",
   "Author": "Telerik",
-  "Framework": "Cordova"
+  "Framework": "Cordova",
+  "projectVersion": "1",
+  "WP8PublisherID": "{8a6d67b9-ccc6-4963-8ad2-25cdc69c8743}",
+  "WP8ProductID": "{84021f5e-05cc-48db-a2c5-171c974145ed}"
 }
