@@ -7,38 +7,38 @@
         // short lasting messages
         showToast_shortTop: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showShortTop('Your changes have been saved', this.onSuccess, this.onError);
+	            window.plugins.toast.showShortTop('This talk is boring', this.onSuccess, this.onError);
             }
         },
         
         showToast_shortCenter: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showShortCenter('There were validation errors', this.onSuccess, this.onError);
+	            window.plugins.toast.showShortCenter('Yeah let\'s go to another room', this.onSuccess, this.onError);
             }
         },
 
         showToast_shortBottom: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showShortBottom('Account created successfully :)', this.onSuccess, this.onError);
+	            window.plugins.toast.showShortBottom('I\'m staying, this guy is awesome!', this.onSuccess, this.onError);
             }
         },
 
         // longer lasting messages
         showToast_longTop: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showLongTop('The battery is almost out of juice!', this.onSuccess, this.onError);
+	            window.plugins.toast.showLongTop('Booooooooooring! Boring boring boring', this.onSuccess, this.onError);
             }
         },
         
         showToast_longCenter: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showLongCenter('Connection failure, please try again later', this.onSuccess, this.onError);
+	            window.plugins.toast.showLongCenter('Yeah - let\'s go to a NativeScript talk', this.onSuccess, this.onError);
             }
         },
 
         showToast_longBottom: function () {
             if (!this.checkSimulator()) {
-                window.plugins.toast.showLongBottom('Please turn on WiFi so we can do a better job determining your location', this.onSuccess, this.onError);
+                window.plugins.toast.showLongBottom('Eddy, I apologize for my fellow Toasts', this.onSuccess, this.onError);
             }
         },
 
