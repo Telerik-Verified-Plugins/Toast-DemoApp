@@ -38,7 +38,13 @@
 
         showToast_longBottom: function () {
             if (!this.checkSimulator()) {
-                window.plugins.toast.showLongBottom('Eddy, I apologize for my fellow Toasts', this.onSuccess, this.onError);
+                window.plugins.toast.showLongBottom('I apologize for my fellow Toasts', this.onSuccess, this.onError);
+            }
+        },
+
+        hideToast: function () {
+            if (!this.checkSimulator()) {
+                window.plugins.toast.hide(this.onSuccess, this.onError);
             }
         },
 
