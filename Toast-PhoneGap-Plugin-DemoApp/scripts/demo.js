@@ -42,6 +42,34 @@
             }
         },
 
+        showToast_LongBottomMin40px: function () {
+            if (!this.checkSimulator()) {
+              	window.plugins.toast.showWithOptions(
+                  {
+                    message: "I'm positioned a bit higher",
+                    duration: "long",
+                    position: "bottom",
+                    addPixelsY: -40
+                  },
+                  this.onSuccess,
+                  this.onError
+            )}
+        },
+
+        showToast_LongBottomPlus30px: function () {
+            if (!this.checkSimulator()) {
+              	window.plugins.toast.showWithOptions(
+                  {
+                    message: "I'm positioned a bit lower",
+                    duration: "long",
+                    position: "bottom",
+                    addPixelsY: 30
+                  },
+                  this.onSuccess,
+                  this.onError
+            )}
+        },
+
         hideToast: function () {
             if (!this.checkSimulator()) {
                 window.plugins.toast.hide(this.onSuccess, this.onError);
