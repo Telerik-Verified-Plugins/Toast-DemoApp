@@ -13,7 +13,7 @@
         
         showToast_shortCenter: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showShortCenter('Yeah let\'s go to another room', this.onSuccess, this.onError);
+	            window.plugins.toast.showShortCenter('Yeah is there another room?', this.onSuccess, this.onError);
             }
         },
 
@@ -32,7 +32,7 @@
         
         showToast_longCenter: function () {
             if (!this.checkSimulator()) {
-	            window.plugins.toast.showLongCenter('Yeah - let\'s go to a NativeScript talk', this.onSuccess, this.onError);
+	            window.plugins.toast.showLongCenter('Yeah - let\'s grab some coffee', this.onSuccess, this.onError);
             }
         },
 
