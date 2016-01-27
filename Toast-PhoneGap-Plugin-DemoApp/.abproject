@@ -17,7 +17,7 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-vibration",
-    "nl.x-services.plugins.toast@2.3.2"
+    "nl.x-services.plugins.toast@2.4.0"
   ],
   "DeviceOrientations": [
     "Portrait",
