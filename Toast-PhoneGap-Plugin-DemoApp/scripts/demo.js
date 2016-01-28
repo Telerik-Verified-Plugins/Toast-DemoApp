@@ -42,7 +42,47 @@
             }
         },
 
-        showToast_LongBottomMin40px: function () {
+        showToast_smallGreen: function () {
+            if (!this.checkSimulator()) {
+              	window.plugins.toast.showWithOptions(
+                  {
+                    message: 'Small green opaque',
+                    duration: 'long',
+                    position: 'bottom',
+                    styling: {
+                      backgroundColor: '#4B946A',
+                      cornerRadius: 10,
+                      opacity: 1.0,
+                      horizontalPadding: 12,
+                      verticalPadding: 6
+                    }
+                  },
+                  this.onSuccess,
+                  this.onError
+            )}
+        },
+
+        showToast_largeRed: function () {
+            if (!this.checkSimulator()) {
+              	window.plugins.toast.showWithOptions(
+                  {
+                    message: 'Red with lots of padding',
+                    duration: 'long',
+                    position: 'bottom',
+                    styling: {
+                      backgroundColor: '#FF0000',
+                      cornerRadius: 6,
+                      opacity: 0.75,
+                      horizontalPadding: 40,
+                      verticalPadding: 40
+                    }
+                  },
+                  this.onSuccess,
+                  this.onError
+            )}
+        },
+
+        showToast_longBottomMin40px: function () {
             if (!this.checkSimulator()) {
               	window.plugins.toast.showWithOptions(
                   {
@@ -56,7 +96,7 @@
             )}
         },
 
-        showToast_LongBottomPlus30px: function () {
+        showToast_longBottomPlus30px: function () {
             if (!this.checkSimulator()) {
               	window.plugins.toast.showWithOptions(
                   {
