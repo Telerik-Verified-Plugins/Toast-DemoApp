@@ -50,7 +50,8 @@
                     duration: 'long',
                     position: 'bottom',
                     styling: {
-                      backgroundColor: '#4B946A',
+                      backgroundColor: '#4B946A', // green
+                      textColor: '#DDDDDD', // lightgray
                       cornerRadius: 10,
                       opacity: 1.0,
                       horizontalPadding: 12,
@@ -70,7 +71,8 @@
                     duration: 'long',
                     position: 'bottom',
                     styling: {
-                      backgroundColor: '#FF0000',
+                      backgroundColor: '#FF0000', // red
+                      textColor: '#FFFF00', // yellow
                       cornerRadius: 6,
                       opacity: 0.75,
                       horizontalPadding: 40,
